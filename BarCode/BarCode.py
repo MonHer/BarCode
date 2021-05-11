@@ -9,9 +9,7 @@
 
 from tkinter import *  # 导入 Tkinter 库
 import barcode
-import datetime
 from barcode.writer import ImageWriter
-from PIL import *
 from PIL import ImageTk
 
 def create_barcode(code):
@@ -23,20 +21,18 @@ def create_barcode(code):
     imgLabel.config(image=bar_photo)
     imgLabel.image = bar_photo
 
-root = Tk()  # 创建窗口对象的背景色
 
-root.title('条形码生成器')
-root.geometry('800x400')
 
-enter_code = StringVar()
-
-bar_code_input = Entry(root, textvariable=enter_code)
-bar_code_input.pack()
-
-btn = Button(root, text='确认', command=lambda: create_barcode(enter_code))
-btn.pack()
-
-imgLabel = Label(root)
-imgLabel.pack()
-# 进入消息循环
-root.mainloop()
+if __name__ == "__main__":
+    root = Tk()  # 创建窗口对象的背景色
+    root.title('条形码生成器')
+    root.geometry('800x400')
+    enter_code = StringVar()
+    bar_code_input = Entry(root, textvariable=enter_code)
+    bar_code_input.pack()
+    btn = Button(root, text='确认', command=lambda: create_barcode(enter_code))
+    btn.pack()
+    imgLabel = Label(root)
+    imgLabel.pack()
+    # 进入消息循环
+    root.mainloop()
