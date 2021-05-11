@@ -1,0 +1,2 @@
+barcode_generator==0.1rc15
+Pillow==8.2.0
